@@ -1,15 +1,15 @@
 import React from 'react'
+import Item from './Item'
 
-export default function ItemList() {
+export default function ItemListItemList({products}){
+
   return (
     <div>
-        {productos.map((item) => (
-          <div>
-            <p> {item.id}</p>
-            <p> {item.name}</p>
-            <p> {item.price}</p>
-          </div> 
-        ))}
+        <ul>
+            {products.map(producto  => {
+            return  <Item product={producto} />
+            })}
+        </ul>
     </div>
   )
 }

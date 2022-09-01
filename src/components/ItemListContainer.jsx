@@ -4,11 +4,11 @@ import ItemList from './ItemList';
 
 export default function Promesa() {
     const [loading, setLoading] = useState(true)
-    const [productos, setProductos] = useState([])
+    const [products, setProducts] = useState([])
     const [error, setError] = useState('')
 
 
-    let promesaProductos = new Promise((res, rej) =>{
+    const promesaProductos = new Promise((res, rej) =>{
         setTimeout(() =>{
             res([
                 {id: 100, name: 'zapato', price: 100},
@@ -17,10 +17,10 @@ export default function Promesa() {
             ]);
         }, 2000);
     })
-
+    console.log(promesaProductos);
     promesaProductos
         .then((res) =>{
-            setProductos(res);
+            setProducts(res);
         })
         .catch((err) =>{
             setError(err);
@@ -30,12 +30,12 @@ export default function Promesa() {
             setLoading(false);
         })
 
-        console.log(promesaProductos);
     return (
         <div>
         <p>Loading: {loading ? 'Loading.......' : 'Cargado con exito'}</p>
 
-        <ItemList promesaProductos={productos}/>
+        <ItemList promesaProductos={products}/>
+
         </div>
     ) 
 }
