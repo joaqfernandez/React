@@ -34,7 +34,7 @@ export default function Promesa() {
         <div>
         <p>Loading: {loading ? 'Loading.......' : 'Cargado con exito'}</p>
 
-        <ItemList promesaProductos={products}/>
+        <ItemList products={products}/>
 
         </div>
     ) 

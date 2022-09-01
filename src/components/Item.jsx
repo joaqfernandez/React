@@ -1,8 +1,7 @@
 import React from 'react';
 
-export default function Item() {
+export default function Item({product}) {
 
-    const Item = ({product}) => {
     return (
         <div>
             <li>
@@ -15,5 +14,5 @@ export default function Item() {
                 <h3>{`Precio: $${product.price}`} </h3>
             </li>
         </div>
-    )}
+    )
 }
