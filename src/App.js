@@ -1,38 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from './components/NavBar';
-import Producto from './components/Producto';
-import Boton from './components/Boton';
 import ItemListContainer from './components/ItemListContainer';
-
-
-
-
+import ItemlDetailContainer from './components/ItemlDetailContainer';
+import ItemDetailContainer from './components/ItemlDetailContainer';
 
 function App() {
-  // let producto1 = {id: 100, name: 'zapato adidas', price: 100}
-  // let producto2 = {id: 101, name: 'zapato nike', price: 100}
-  // let producto3 = {id: 102, name: "'vestido lola", price: 100}
-
-  // const saludo = 'holaaaaa'
-
 
   return (
-    <div >
-
-
-      {/* <NavBar/> */}
-
-      <ItemListContainer />
-
-      {/* <Boton />  */}
+    <>
+      <BrowserRouter>
+      {/* AQUI VAN LOS COMPONENTES QUE ESTAN PRESENTES EN TODAS LAS RUTAS */}
+      {/* <NavBar />
       
-      {/* <Producto item={producto1}/>
-      <Producto item={producto2}/>
-      <Producto item={producto3}/> */}
-
-    </div>
-    
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/category/:id' element={<ItemListContainer/>} />
+          <Route path='/item/:id' element={<ItemlDetailContainer/>} />
+        </Routes> */}
+      <ItemDetailContainer />
+      </BrowserRouter>
+    </>
   );
 }
 
