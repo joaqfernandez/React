@@ -4,21 +4,25 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemlDetailContainer from './components/ItemlDetailContainer';
 import ItemDetailContainer from './components/ItemlDetailContainer';
+import Test from './components/Test';
+import ItemDetail from './components/ItemDetail';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
-      {/* AQUI VAN LOS COMPONENTES QUE ESTAN PRESENTES EN TODAS LAS RUTAS */}
-      {/* <NavBar />
+      <NavBar />
       
         <Routes>
+        <Route path="/test" element={<Test />} />
+
           <Route path='/' element={<ItemListContainer />} />
           <Route path='/category/:id' element={<ItemListContainer/>} />
-          <Route path='/item/:id' element={<ItemlDetailContainer/>} />
-        </Routes> */}
-      <ItemDetailContainer />
+          <Route path='/products/1' element={<ItemlDetailContainer/>} />
+
+        </Routes> 
+
       </BrowserRouter>
     </>
   );

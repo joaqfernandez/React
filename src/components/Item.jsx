@@ -5,12 +5,8 @@ export default function Item({product}) {
     return (
         <div>
             <li>
-                <img
-                width={200}
-                height={260}
-                alt={product.id}
-                />
-                <p>{product.name}</p>
+                <h2>{product.name}</h2>
+                <p>{product.desc}</p>
                 <h3>{`Precio: $${product.price}`} </h3>
             </li>
         </div>

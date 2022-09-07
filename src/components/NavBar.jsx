@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from './CartWidget';
-
+import { Link as RouterLink}   from 'react-router-dom';
 
 const pages = ['Productos', 'Nosotros'];
 const settings = ['Perfil', 'Cuenta', 'Bandeja de entrada', 'Cerrar sesion'];
@@ -119,6 +119,7 @@ const ResponsiveAppBar = () => {
                 <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                     {pages.map((page) => (
                     <Button
+                    component={RouterLink} to={`/category/${page}`}
                         key={page}
                         onClick={handleCloseNavMenu}
                         sx={{ my: 2, color: 'white', display: 'block' }}

@@ -11,9 +11,9 @@ export default function Promesa() {
     const promesaProductos = new Promise((res, rej) =>{
         setTimeout(() =>{
             res([
-                {id: 100, name: 'zapato', price: 100},
-                {id: 101, name: 'cartera', price: 150},
-                {id: 102, name: 'pelota', price: 200}
+                {id: 100, name: 'zapato', price: 100, desc: 'Zapato que te hara correr mas rapido que'},
+                {id: 101, name: 'cartera', price: 150, desc: 'cartera para verte mas fashon que wanda nara' },
+                {id: 102, name: 'pelota', price: 200, desc: 'pelota que pateas y va al angulo'}
             ]);
         }, 2000);
     })
