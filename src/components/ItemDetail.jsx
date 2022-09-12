@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import Boton from './Boton'
 
 export default function ItemDetail({data}) {
 
 
-
+    const [contador, setContador] = useState(1)
 return (
     <div>
             {data.id ? (
@@ -11,7 +12,7 @@ return (
                     <p>{data.title}</p>
                     <p>{data.description}</p>
                     <p>{data.price}</p>
-                    <p>{data.image}</p>
+                    <Boton contador={contador} setContador={setContador}/>
                 </div>
             ) : (
                 <p>Loading...</p>

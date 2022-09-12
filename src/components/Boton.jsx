@@ -1,27 +1,27 @@
 import React, {useState, useEffect} from 'react';
 
 let render = 0;
-export default function Boton() {
+export default function Boton({contador, setContador}) {
 
 render = render + 1;
 console.log(render);
 
-const [contador, setContador] = useState(0);
+
 
     return (
         <div>
-            <h1>Contador:{contador}</h1>
+            <h1>Carrito: {contador}</h1>
             <button onClick={() =>{
                 setContador(contador - 1);
             }}
             >
-                Restar Numero al contador
+                Restar del carrito
             </button>
 
             <button onClick={() =>{
                 setContador(contador + 1);
             }}>
-                Sumar numero al contador
+                Sumar al carrito
             </button>
         </div>
     )
