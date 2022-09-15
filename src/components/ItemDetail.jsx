@@ -5,6 +5,17 @@ export default function ItemDetail({data}) {
 
 
     const [contador, setContador] = useState(1)
+    const [compra, setCompra] = useState(false)
+
+    const onAdd = () => {
+        let purchase = {
+            id,
+            title,
+            price,
+            quantity: contador
+        }
+        setCompra(true)
+    }
 return (
     <div>
             {data.id ? (

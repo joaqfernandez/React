@@ -11,7 +11,7 @@ export default function ItemDetailContainer() {
       .then((response) => response.json())
       .then((json) => getData(json))
 
-    })
+    });
   return (
     <div>
         <ItemDetail data={data}/>
