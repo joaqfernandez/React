@@ -6,6 +6,8 @@ import ItemlDetailContainer from './components/ItemlDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 import Test from './tests/poke/Test';
+import TestLecturaProductos from './components/TestLecturaProductos';
+import TestLecturaProducto from './components/TestLecturaProducto';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <BrowserRouter>
           <NavBar />
             <Routes>
+            <Route path="/test2" element={<TestLecturaProducto/>} />
+              <Route path="/test1" element={<TestLecturaProductos />} />
               <Route path="/test" element={<Test />} />
               <Route path='/' element={<ItemListContainer />} />
               <Route path='/category/:id' element={<ItemListContainer/>} />
