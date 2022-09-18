@@ -1,15 +1,17 @@
 import React from "react";
-import Badge from "@mui/material/Badge"; //Importo el componente Badge, ver docu en librería.
+import Badge from "@mui/material/Badge"; 
+import LocalMallIcon from '@mui/icons-material/LocalMall';
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext, useCart } from "../context/CartContext";
 
-export default function CartWidget({ counter }) {
+export default function CartWidget({ }) {
 
-    const { contador } = useContext(CartContext);
+    const{cartQuantity, cart} = useCart()
 
 return (
         <div>
-            <Badge badgeContent={contador} color="primary">
+            <Badge color='secondary' fontSize='large'>
+                <span>{cartQuantity() || ''}</span>
                 <span>🛒</span>
             </Badge>
         </div>

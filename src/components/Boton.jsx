@@ -1,28 +1,28 @@
 import React, {useState, useEffect} from 'react';
 
 let render = 0;
-export default function Boton({contador, setContador}) {
+export default function Boton({initial, stock, onAdd, count, setCount}) {
+  
+    const restar = () => {
+        if(count > initial){
+            setCount(count-1)
+        }
+    }
 
-render = render + 1;
-console.log(render);
+    const sumar=()=>{
+        if(count<stock){
+            setCount(count + 1)
+        }
+    }
 
-
-
-    return (
-        <div>
-            <h1>Carrito: {contador}</h1>
-            <button onClick={() =>{
-                setContador(contador - 1);
-            }}
-            >
-                Restar del carrito
-            </button>
-
-            <button onClick={() =>{
-                setContador(contador + 1);
-            }}>
-                Sumar al carrito
-            </button>
-        </div>
-    )
+  return (
+    <>
+    <div>
+        <button className='btn btn-success' onClick={sumar}>+</button>
+        <span  className='btn btn-light'>{count}</span>
+        <button  className='btn btn-danger'onClick={restar}>-</button>
+    </div>
+        <button  className='btn btn-primary m-3'onClick={onAdd}>comprar</button>
+    </>
+  )
 }

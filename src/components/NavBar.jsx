@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from './CartWidget';
-import { Link as RouterLink}   from 'react-router-dom';
+import { Link as RouterLink, NavLink}   from 'react-router-dom';
 
 const pages = ['Productos', 'Nosotros'];
 const settings = ['Perfil', 'Cuenta', 'Bandeja de entrada', 'Cerrar sesion'];
@@ -159,7 +159,10 @@ const ResponsiveAppBar = () => {
                     </Menu>
                 </Box>
                 </Toolbar>
-                <CartWidget counter={'numero de obj en el carrito'} />
+                <NavLink to='/cart'>
+                    <CartWidget />
+                </NavLink>
+                
             </Container>
         </AppBar>
     );
