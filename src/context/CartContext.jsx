@@ -8,7 +8,20 @@ export const CartProvider = ({ children }) => {
     const [count, setCount] = useState(0);
     const [contador, setContador] = useState(1);
     const [compra, setCompra] = useState(false);
+    const initial = 1;
+    const stock = 10;
 
+    const restar = () => {
+        if (count > initial) {
+            setCount(count - 1);
+        }
+    };
+    
+    const sumar = () => {
+        if (count < stock) {
+            setCount(count + 1);
+        }
+    };
     const addItem2 = (item, cantidad) => {
         const purchase = {...item, quantity:cantidad}
         const existsInCart = cart.find((prod)=> prod.id === item.id)
@@ -37,10 +50,10 @@ export const CartProvider = ({ children }) => {
     };
         
     const cartQuantity = () => {
-        return cart.reduce((acc, prod) => acc += prod.quantity,0)
+        return cart.reduce((acc, product) => acc += product.quantity,0)
     };
     const cartTotal = () => {
-        return cart.reduce((acc, prod)=> acc += prod.price * prod.quantity,0)
+        return cart.reduce((acc, product)=> acc += product.price * product.quantity,0)
     };
 
 
@@ -61,6 +74,10 @@ return (
                 cartTotal,
                 cartQuantity,
                 addItem2,
+                sumar,
+                restar, 
+                stock,
+                initial,
             }}
         >
             {children}
