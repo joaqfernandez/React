@@ -12,7 +12,7 @@ export default function CartItem({compra}) {
                 <span>{compra.name}</span>
                 <span>{compra.quantity}</span>
                 <span>${compra.price}</span>
-                <button className='btn btn-danger' onclick={()=>removeItem(compra.id)}></button>
+                <button className='btn btn-danger' onclick={()=>removeItem(compra.id)}>X</button>
             </div>
     </div>
     )

@@ -43,8 +43,8 @@ export const CartProvider = ({ children }) => {
         setCart([]);
     };
     const removeItem = (id) => {
-        setCart(cart.filter((prod) => prod.id !== id));
-    };
+        setCart(cart.filter((prod)=> prod.id !== id))
+    }
         const isInCart = (id) => {
         return cart.some((prod) => prod.id === id);
     };
@@ -53,31 +53,34 @@ export const CartProvider = ({ children }) => {
         return cart.reduce((acc, product) => acc += product.quantity,0)
     };
     const cartTotal = () => {
-        return cart.reduce((acc, product)=> acc += product.price * product.quantity,0)
-    };
+        return cart.reduce(
+          (acc, product) => (acc += product.price * product.quantity),
+            0
+        );
+        }
 
 
 
 return (
         <CartContext.Provider
                 value={{
-                cart,
-                clear,
-                removeItem,
-                isInCart,
-                count,
-                setCount,
-                setContador,
-                setCompra,
-                contador,
-                compra,
-                cartTotal,
-                cartQuantity,
-                addItem2,
-                sumar,
-                restar, 
-                stock,
-                initial,
+                    cart,
+                    clear,
+                    removeItem,
+                    isInCart,
+                    count,
+                    setCount,
+                    setContador,
+                    setCompra,
+                    contador,
+                    compra,
+                    cartTotal,
+                    cartQuantity,
+                    addItem2,
+                    sumar,
+                    restar,
+                    stock,
+                    initial,
             }}
         >
             {children}

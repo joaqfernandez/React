@@ -9,7 +9,7 @@ import CartItem from './CartItem';
 export default function Cart() {
 
     const { cart, removeItem, clear, cartTotal } = useCart()
-    const navegar = useNavigate
+    const navegar = useNavigate()
     return (
         <div>
             {
