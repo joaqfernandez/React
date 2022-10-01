@@ -1,44 +1,45 @@
-import useEnhancedEffect from '@mui/material/utils/useEnhancedEffect';
-import { collection, doc, getDoc } from 'firebase/firestore';
-import React, {useEffect, useState} from 'react'
-import { useParams } from 'react-router-dom';
-import { db } from '../firebase/firebase';
-import ItemDetail from './ItemDetail';
+import { collection, doc, getDoc } from 'firebase/firestore'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { db } from '../firebase/firebase'
+import ItemDetail from './ItemDetail'
 
-
-export default function ItemDetailContainer() {
+const ItemDetailContainer = () => {
     const [productDetail, setProductDetail]= useState({})
-    const [data, getData] = useState([]);
-    const {id}=useParams()
+    const [loading, setLoading]= useState(true)
+    const{id}=useParams()
 
-    // useEffect(() =>{
-    //   fetch('https://fakestoreapi.com/products/1')
-    //   .then((response) => response.json())
-    //   .then((json) => getData(json))
+      //mock
+    // useEffect(()=>{
+    //     data
+    //     .then((res)=> setProductDetail(res.find((item)=> item.id === id)))
+    //     .catch((error)=> console.log(error))
+    //     .finally(()=> setLoading(false))
+    // },[id])
 
-    // });
+    //firebase
 
-    useEffect(() =>{
-      const coleccionProductos = collection(db, "products")
-      const referenciaDoc = doc(coleccionProductos, id)
-
+    useEffect(()=>{
+      //le decimos nuestra base de datos y en que collecion tiene que ir
+      const coleccionProd = collection(db, "products")
+      // hacer una referencia que me traiga el ID del useParams
+      const referenciaDoc = doc(coleccionProd, id)
+      //traemos el documento
       getDoc(referenciaDoc)
-      .then((result) =>{
+      .then((result)=>{
         setProductDetail({
           id:result.id,
           ...result.data()
         })
       })
-      .catch((error) => console.log(error))
-      
-    },[])
-
-
-
-
+      .catch((error)=> console.log(error))
+      .finally(()=> setLoading(false))
+    }, [])
   return (
     <div>
-        <ItemDetail data={data}/>
+       {loading ? <p>Cargando...</p> : <ItemDetail productDetail={productDetail}/>}
     </div>
   )
 }
+
+export default ItemDetailContainer

@@ -4,12 +4,8 @@ import Item from './Item'
 export default function ItemListItemList({ products }){
 
   return (
-    <div>
-        <ul>
-            {products.map(producto  => {
-            return  <Item product={producto} />
-            })}
-        </ul>
+<div className="cardContainer">
+        {products.map((product)=> <Item key={product.id} product={product}/>)}
     </div>
   )
 }

@@ -1,6 +1,21 @@
 .App {
   text-align: center;
 }
+.cardContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.links{
+  color:white;
+  text-decoration: none;
+}
+
+.links:hover{
+  color:violet
+}
 
 .App-logo {
   height: 40vmin;

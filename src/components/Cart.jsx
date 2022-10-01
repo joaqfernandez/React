@@ -1,32 +1,35 @@
 import React from 'react'
-import  { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { CartContext } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom'
+// import { useContext } from 'react'
+// import { CartContext } from '../context/CartContext'
 import { useCart } from '../context/CartContext'
-import CartItem from './CartItem';
+import CartItem from './CartItem'
 
-
-export default function Cart() {
-
-    const { cart, removeItem, clear, cartTotal } = useCart()
-    const navegar = useNavigate()
+const Cart = () => {
+const {cart,  cartTotal, clear}=useCart()
+const navegar = useNavigate()
+console.log(cart)
     return (
         <div>
-            {
-                !cart.length
-                ?<div>
-                    <h2>Tu carrito esta vacio</h2>
-                    <h4> Te invitamos a ver nuestros productos</h4>
-                    <button onclick={()=>navegar('/')}> ir a comprar</button>
+        {
+            !cart.length 
+            ?<div>
+            <h2>Tu carrito esta vacio!</h2>
+            <h4>Te invitamos a ver nuestros productos</h4>
+            <button className='btn btn-success' onClick={()=>navegar('/')}>Ir a comprar</button>
+            </div>
+            :<div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+            <h2>Tu carrito</h2>
+                {cart.map((compra)=> <CartItem key={compra.id} compra={compra}/>)}
+                <span>Total a pagar : ${cartTotal()}</span>
+                <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', padding:'2rem'}}>
+                <button className='btn btn-danger' onClick={clear}>Vaciar Carrito</button>
+                <button className='btn btn-success' onClick={()=>navegar('/checkout')}>Terminar compra</button>
                 </div>
-                :<div>
-                    <h2>Tu carrito</h2>
-                    {cart.map((compra) => <CartItem key={compra.id} compra={compra}/>)}
-                    <span>total a pagar: ${cartTotal()}</span>
-                    <button className='btn btn-danger' onclick={clear}>Vaciar carrtito</button>
-                    <button className='btn btn-success'>Terminar compra</button>
-                </div>
-            }
+            </div>
+        }
         </div>
     )
 }
+
+export default Cart

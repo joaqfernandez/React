@@ -5,9 +5,8 @@ import Cart from './components/Cart';
 import ItemlDetailContainer from './components/ItemlDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
-import Test from './tests/poke/Test';
-import TestLecturaProductos from './components/TestLecturaProductos';
-import TestLecturaProducto from './components/TestLecturaProducto';
+import ItemDetailContainer from './components/ItemlDetailContainer';
+import 'bootstrap/dist/css/bootstrap.css'
 
 
 function App() {
@@ -18,15 +17,12 @@ function App() {
         <BrowserRouter>
           <NavBar />
             <Routes>
-            <Route path="/test2" element={<TestLecturaProducto/>} />
-              <Route path="/test1" element={<TestLecturaProductos />} />
-              <Route path="/test" element={<Test />} />
-              <Route path='/' element={<ItemListContainer />} />
-              <Route path='/category/:id' element={<ItemListContainer/>} />
-              <Route path='/products/1' element={<ItemlDetailContainer/>} />
-              <Route path='/cart' element={<Cart/>}/>
+            <Route path='/' element={ <ItemListContainer />}/>
+            <Route path='/categoria/:categoriaId' element={ <ItemListContainer />}/>
+            <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+            <Route path='/checkout'/>
             </Routes> 
-
           </BrowserRouter>
     </CartProvider>
         
