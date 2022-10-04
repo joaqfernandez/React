@@ -7,6 +7,7 @@ import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 import ItemDetailContainer from './components/ItemlDetailContainer';
 import 'bootstrap/dist/css/bootstrap.css'
+import Checkout from './components/Checkout';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
             <Route path='/categoria/:categoriaId' element={ <ItemListContainer />}/>
             <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
             <Route path='/cart' element={<Cart/>}/>
-            <Route path='/checkout'/>
+            <Route path='/checkout' element={<Checkout/>}/>
             </Routes> 
           </BrowserRouter>
     </CartProvider>
