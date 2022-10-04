@@ -3,7 +3,7 @@ import ItemList from './ItemList';
 import {collection, getDocs, query, where } from 'firebase/firestore'
 import {db} from '../firebase/firebase'
 import { useParams } from 'react-router-dom';
-
+import 'animate.css';
 
 export default function Promesa() {
     const [loading, setLoading] = useState(true)
@@ -11,30 +11,6 @@ export default function Promesa() {
     const [error, setError] = useState('')
     const{categoriaId}= useParams()
 
-//mock
-    // const promesaProductos = new Promise((res, rej) =>{
-    //     setTimeout(() =>{
-    //         res([
-    //             {id: 100, name: 'zapato', price: 100, desc: 'Zapato que te hara correr mas rapido que'},
-    //             {id: 101, name: 'cartera', price: 150, desc: 'cartera para verte mas fashon que wanda nara' },
-    //             {id: 102, name: 'pelota', price: 200, desc: 'pelota que pateas y va al angulo'}
-    //         ]);
-    //     }, 2000);
-    // })
-    // console.log(promesaProductos);
-    // promesaProductos
-    //     .then((res) =>{
-    //         setProducts(res);
-    //     })
-    //     .catch((err) =>{
-    //         setError(err);
-    //     })
-
-    //     .finally((res) =>{
-    //         setLoading(false);
-    //     })
-
-//firebase 
 useEffect(()=>{
     setLoading(true)
     const coleccionProductos= categoriaId ? query(collection(db, "products"), where("category", "==", categoriaId)) : collection(db, "products")
@@ -55,11 +31,10 @@ useEffect(()=>{
     console.log(products)
 
     return (
-        <div>
-        <p>Loading: {loading ? 'Loading.......' : 'Cargado con exito'}</p>
+        <div class="animate__animated animate__fadeInUp">
+            <p>{loading ? 'Loading.......' : ''}</p>
 
-        <ItemList products={products}/>
-
+            <ItemList products={products}/>
         </div>
     ) 
 }

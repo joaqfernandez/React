@@ -15,14 +15,14 @@ const Checkout = () => {
     const datosComprador = (e)=> {
         setComprador({
             ...comprador,
-           [e.target.name]:e.target.value
+            [e.target.name]:e.target.value
         })
     }
- 
+
     const finalizarCompra = (e) =>{
         e.preventDefault()
         if(Object.values(comprador).length !== 3){
-           setMensaje(true)
+            setMensaje(true)
         }else{
             setMensaje(false)
             setLoader(true)

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import './Botones.css';
 
 const Item = ({product}) => {
 
@@ -14,7 +15,7 @@ const Item = ({product}) => {
         <p className="card-text">${price}</p>
         <p className="card-text">stock: {stock}</p>
     </div>
-    <button className='btn btn-primary' onClick={()=>navegar(`/detalle/${id}`)}>Ver más</button>
+    <button class="bn6" onClick={()=>navegar(`/detalle/${id}`)}>Ver más</button>
   </div>
 
   )

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import CartItem from './CartItem'
 
+
 const Cart = () => {
 const {cart,  cartTotal, clear}=useCart()
 const navegar = useNavigate()

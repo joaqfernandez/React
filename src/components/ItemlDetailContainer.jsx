@@ -9,22 +9,9 @@ const ItemDetailContainer = () => {
     const [loading, setLoading]= useState(true)
     const{id}=useParams()
 
-      //mock
-    // useEffect(()=>{
-    //     data
-    //     .then((res)=> setProductDetail(res.find((item)=> item.id === id)))
-    //     .catch((error)=> console.log(error))
-    //     .finally(()=> setLoading(false))
-    // },[id])
-
-    //firebase
-
     useEffect(()=>{
-      //le decimos nuestra base de datos y en que collecion tiene que ir
       const coleccionProd = collection(db, "products")
-      // hacer una referencia que me traiga el ID del useParams
       const referenciaDoc = doc(coleccionProd, id)
-      //traemos el documento
       getDoc(referenciaDoc)
       .then((result)=>{
         setProductDetail({
@@ -37,7 +24,7 @@ const ItemDetailContainer = () => {
     }, [])
   return (
     <div>
-       {loading ? <p>Cargando...</p> : <ItemDetail productDetail={productDetail}/>}
+        {loading ? <p>Cargando...</p> : <ItemDetail productDetail={productDetail}/>}
     </div>
   )
 }
