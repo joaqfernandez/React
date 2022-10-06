@@ -6,8 +6,7 @@ export const CartContext = createContext();
 export const CartProvider = ({children}) => {
     const [cart, setCart]= useState([]);
 
-//FUNCION CON ITEM Y QUANTITY
-//pasar item y contador
+//additem2
     const addItem2 = (item, cantidad) => {
         const purchase = {...item, quantity:cantidad}
         const existsInCart = cart.find((prod)=> prod.id === item.id)
@@ -26,7 +25,7 @@ export const CartProvider = ({children}) => {
     }
 
 
-    //FUNCION QUE RECIBE ITEM(RECIBE PURCHASE)
+    //additem
     const addItem = (item) => {
         const existsInCart = cart.find((prod)=> prod.id === item.id)
         if(existsInCart){
