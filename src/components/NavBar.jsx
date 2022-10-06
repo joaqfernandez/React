@@ -13,7 +13,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from './CartWidget';
 import { Link as RouterLink, NavLink}   from 'react-router-dom';
 
-const pages = ['deportes', 'Tecnologia', 'Moda'];
+const pages = ['deportes', 'tecnologia', 'moda'];
 
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -29,7 +29,7 @@ const ResponsiveAppBar = () => {
 
     return (
 
-        <AppBar position="static">
+        <AppBar position="sticky">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                 <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -51,7 +51,7 @@ const ResponsiveAppBar = () => {
                     E-SHOP
                 </Typography>
 
-                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none'} }}>
                     <IconButton
                     size="large"
                     aria-label="account of current user"
@@ -87,7 +87,7 @@ const ResponsiveAppBar = () => {
                     ))}
                     </Menu>
                 </Box>
-                <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                <AdbIcon sx={{ display: { xs: 'flex', md: 'none'}, mr: 1 }} />
                 <Typography
                     variant="h5"
                     noWrap
@@ -95,7 +95,7 @@ const ResponsiveAppBar = () => {
                     href=""
                     sx={{
                     mr: 2,
-                    display: { xs: 'flex', md: 'none' },
+                    display: { xs: 'flex', md: 'none'},
                     flexGrow: 1,
                     fontFamily: 'monospace',
                     fontWeight: 700,
@@ -106,13 +106,13 @@ const ResponsiveAppBar = () => {
                 >
                     LOGO
                 </Typography>
-                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex'} }}>
                     {pages.map((page) => (
                     <Button
-                    component={RouterLink} to={`/category/${page}`}
+                        component={RouterLink} to={`/category/${page}`}
                         key={page}
                         onClick={handleCloseNavMenu}
-                        sx={{ my: 2, color: 'white', display: 'block' }}
+                        sx={{ my: 2, color: 'white', display: 'block'}}
                     >
                         {page}
                     </Button>

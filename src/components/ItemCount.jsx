@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ItemCount = ({initial, stock, onAdd, count, setCount}) => {
-  
+
     const restar = () => {
         if(count > initial){
             setCount(count-1)
@@ -21,7 +21,7 @@ const ItemCount = ({initial, stock, onAdd, count, setCount}) => {
             <span  className='btn btn-light'>{count}</span>
             <button  className='btn btn-danger'onClick={restar}>-</button>
         </div>
-            <button  className='btn btn-primary m-3'onClick={onAdd}>comprar</button>
+            <button  className='btn btn-primary m-3' onClick={onAdd}>Comprar</button>
         </>
     )
     }
