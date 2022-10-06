@@ -9,15 +9,15 @@ Mi nombre es Joaquin Fernandez y este es mi trabajo final para el curso de React
   Bootstrap / Material UI/ Animate.Style
 ```
 
-Libreria: bootstrap
+*Libreria*: bootstrap
 Uso: estilos
 Descripcion: Use Bootstrap para darle estilos a la pagina, principalmente a los botones
 
-Libreria: Material UI
+*Libreria*: Material UI
 Uso: NavBar
 Descripcion: Utilice la NavBar de MUI porque me gustaba mucho y tengo pensado seguir actualizandola a medida que la pagina crezca
 
-Libreria: Animate.Style
+*Libreria*: Animate.Style
 Uso: Efectos
 Descripcion: Agregue efectos en la pagina principal cuando aparecian las cards, para que tuviera un poco mas de dinamica la pagina principal
 
