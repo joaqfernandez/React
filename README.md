@@ -9,10 +9,9 @@ Mi nombre es Joaquin Fernandez y este es mi trabajo final para el curso de React
   Bootstrap / Material UI/ Animate.Style
 ```
 
-| Libreria  |  Uso     | Descripcion                |
-| :-------- | :------- | :------------------------- |
-| `Bootstrap` | `Estilos` | Use Bootstrap para darle estilos a la |
-||||pagina, principalmente a los botones|
+Libreria: bootstrap
+Uso: estilos
+Descripcion: Use Bootstrap para darle estilos a la pagina, principalmente a los botones
 
 
 | Libreria | Uso     | Descripcion                       |
