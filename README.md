@@ -13,23 +13,13 @@ Libreria: bootstrap
 Uso: estilos
 Descripcion: Use Bootstrap para darle estilos a la pagina, principalmente a los botones
 
+Libreria: Material UI
+Uso: NavBar
+Descripcion: Utilice la NavBar de MUI porque me gustaba mucho y tengo pensado seguir actualizandola a medida que la pagina crezca
 
-| Libreria | Uso     | Descripcion                       |
-| :-------- | :------- | :-------------------------------- |
-| `Material UI`| `NavBar` | Utilice la NavBar de MUI porque me |
-||||gustaba mucho y tengo pensado seguir|
-||||actualizandola a medida que la pagina|
-||||crezca|
-
-| Libreria | Uso     | Descripcion                       |
-| :-------- | :------- | :-------------------------------- |
-| `Animate.Style`| `Efectos` | Agregue efectos en la pagina |
-||||principal cuando aparecian las|
-||||cards, para que tuviera un poco|
-||||mas de dinamica la pagina principal|
-
-
-
+Libreria: Animate.Style
+Uso: Efectos
+Descripcion: Agregue efectos en la pagina principal cuando aparecian las cards, para que tuviera un poco mas de dinamica la pagina principal
 
 
 ## Deployment
